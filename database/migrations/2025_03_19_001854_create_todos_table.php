@@ -15,6 +15,8 @@ return new class extends Migration {
             $table->string('title');
             $table->boolean('completed')->default(false); // Pastikan boolean
             $table->timestamps();
+            $table->boolean('pinned')->default(false); // untuk sematkan
+            $table->enum('priority', ['low', 'medium', 'high'])->default('medium'); // untuk level
         });
         
     }
